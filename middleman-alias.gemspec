@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Middleman::Alias::VERSION
   spec.authors       = ["Jeremy Green"]
   spec.email         = ["jeremy@octolabs.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Redirects for Middleman that are friendly to the Googles.}
+  spec.description   = %q{Redirects for Middleman that are friendly to the Googles.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "cucumber", "~> 1.3.10"
 end
