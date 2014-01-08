@@ -1,4 +1,4 @@
-require "middleman/alias/version"
+require "middleman-alias/version"
 
 module Middleman
   module Alias
