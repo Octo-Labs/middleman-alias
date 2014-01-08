@@ -5,7 +5,7 @@ require 'middleman-alias/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "middleman-alias"
-  spec.version       = Middleman::Alias::VERSION
+  spec.version       = MiddlemanAlias::VERSION
   spec.authors       = ["Jeremy Green"]
   spec.email         = ["jeremy@octolabs.com"]
   spec.summary       = %q{Redirects for Middleman that are friendly to the Googles.}
