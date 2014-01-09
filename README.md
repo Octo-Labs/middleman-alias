@@ -18,18 +18,25 @@ Or install it yourself as:
 
 ## Usage
 
-First you need to activate the module in your @config.rb@.
+First you need to activate the module in your `config.rb`.
 
 ```
 activate :alias
 ```
 
-Then you can add an @alias@ to the frontmatter for a page or post and
+Then you need to generate the template that will handle the aliases.
+You only need to do this one time.
+
+```
+middleman alias_template
+```
+
+Then you can add an `alias` to the frontmatter for a page or post and
 middleman-alias will generate a SEO friendly redirect page at that
 location.
 
-Say that you have a page at @/foo.html@, but that the page used to live
-at @/old-foo.html@.  In the frontmatter for @foo.html@ you can alias it
+Say that you have a page at `/foo.html`, but that the page used to live
+at `/old-foo.html`.  In the frontmatter for `foo.html` you can alias it
 to the old address.
 
 ```
@@ -37,6 +44,8 @@ title : "A post about foo"
 alias : /old-foo.html
 ```
 
+Now someone can visit your middleman site at `/old-foo.html` and they'll
+be redirected to `/foo.html`.
 
 ## Contributing
 
