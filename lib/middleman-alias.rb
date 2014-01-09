@@ -1,5 +1,6 @@
 require 'middleman-core'
 require "middleman-alias/version"
+require "middleman-alias/commands"
 
 ::Middleman::Extensions.register(:alias) do
   require 'middleman-alias/extension'
