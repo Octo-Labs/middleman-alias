@@ -18,7 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-First you need to activate the module in your `config.rb`.
+First you need to activate the module in your `config.rb`. *Make sure
+that it is the LAST thing activated.* It's important that other modules
+have the opportunity to do their own URL manipulations before the
+alias redirect pages are generated.
 
 ```
 activate :alias
