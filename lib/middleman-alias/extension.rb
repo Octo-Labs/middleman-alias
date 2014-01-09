@@ -9,13 +9,13 @@ module Middleman
     def manipulate_resource_list(resources)
       resources.each do |resource|
         if resource.data["alias"]
-          redirect = Sitemap::Resource.new(@app.sitemap, resource.data["alias"]).tap do |p|
+          Sitemap::Resource.new(@app.sitemap, resource.data["alias"]).tap do |p|
             p.proxy_to("alias.html")
             p.add_metadata locals: {
-              destination: resource.destination_path
+              destination: resource.url
             }
+            resources.push p
           end
-          resources.push redirect
         end
       end
       resources
