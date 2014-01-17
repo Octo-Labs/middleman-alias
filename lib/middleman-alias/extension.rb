@@ -9,7 +9,9 @@ module Middleman
     def manipulate_resource_list(resources)
       resources.each do |resource|
         if resource.data["alias"]
-          Sitemap::Resource.new(@app.sitemap, resource.data["alias"]).tap do |p|
+          alias_url = resource.data["alias"]
+          alias_url += "/index.html" unless alias_url.match(/\.html$/)
+          Sitemap::Resource.new(@app.sitemap, alias_url).tap do |p|
             p.proxy_to("alias.html")
             p.add_metadata locals: {
               destination: resource.url
