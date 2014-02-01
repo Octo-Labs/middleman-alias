@@ -27,13 +27,6 @@ alias redirect pages are generated.
 activate :alias
 ```
 
-Then you need to generate the template that will handle the aliases.
-You only need to do this one time.
-
-```
-middleman alias_template
-```
-
 Then you can add an `alias` to the frontmatter for a page or post and
 middleman-alias will generate a SEO friendly redirect page at that
 location.
@@ -49,6 +42,17 @@ alias : /old-foo.html
 
 Now someone can visit your middleman site at `/old-foo.html` and they'll
 be redirected to `/foo.html`.
+
+If you end an alias with a `/` that alias will be treated as a virtual
+directory.
+
+```
+title : "A post about foo"
+alias : /old-foo/
+```
+
+The example above will result in a redirect file being generated at
+`/old-foo/index.html`, which will be accessible to browsers at `/old-foo/`.
 
 ## Contributing
 

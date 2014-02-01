@@ -1,4 +1,5 @@
 require 'middleman-core'
+require 'middleman-alias/alias-resource'
 
 module Middleman
   class AliasExtension < Middleman::Extension
@@ -10,14 +11,15 @@ module Middleman
       resources.each do |resource|
         if resource.data["alias"]
           alias_url = resource.data["alias"]
-          alias_url += "/index.html" if alias_url.match(/\/$/)
-          Sitemap::Resource.new(@app.sitemap, alias_url).tap do |p|
-            p.proxy_to("alias.html")
-            p.add_metadata locals: {
-              destination: resource.url
-            }
-            resources.push p
-          end
+          alias_url += "index.html" if alias_url.match(/\/$/)
+          resources.push Middleman::Sitemap::AliasResource.new(@app.sitemap, alias_url, resource.url)
+          #Sitemap::Resource.new(@app.sitemap, alias_url).tap do |p|
+            #p.proxy_to("alias.html")
+            #p.add_metadata locals: {
+              #destination: resource.url
+            #}
+            #resources.push p
+          #end
         end
       end
       resources
