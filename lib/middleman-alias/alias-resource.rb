@@ -9,6 +9,10 @@ module Middleman
         super(store, path)
       end
 
+      def source_file
+        nil
+      end
+
       def template?
         false
       end
