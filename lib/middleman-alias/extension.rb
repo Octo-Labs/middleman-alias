@@ -12,6 +12,9 @@ module Middleman
         if resource.data["alias"]
           alias_url = resource.data["alias"]
           alias_url += "index.html" if alias_url.match(/\/$/)
+          existing_resource = resources.select{|r| r.destination_path == alias_url }.first
+          next if existing_resource
+
           resources.push Middleman::Sitemap::AliasResource.new(@app.sitemap, alias_url, resource.url)
           #Sitemap::Resource.new(@app.sitemap, alias_url).tap do |p|
             #p.proxy_to("alias.html")
