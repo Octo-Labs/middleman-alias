@@ -2,6 +2,8 @@
 
 Add alias/redirect information to your middleman pages and posts.
 
+[![Gem Version](https://badge.fury.io/rb/middleman-alias.png)](http://badge.fury.io/rb/middleman-alias)
+
 ## Installation
 
 Add this line to your application's Gemfile:
