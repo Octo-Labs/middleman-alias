@@ -3,8 +3,8 @@
 Add alias/redirect information to your middleman pages and posts.
 
 [![Gem Version](https://badge.fury.io/rb/middleman-alias.png)](http://badge.fury.io/rb/middleman-alias)
-
 [![Build Status](https://travis-ci.org/Octo-Labs/middleman-alias.png?branch=master)](https://travis-ci.org/Octo-Labs/middleman-alias)
+[![Code Climate](https://codeclimate.com/github/Octo-Labs/middleman-alias.png)](https://codeclimate.com/github/Octo-Labs/middleman-alias)
 
 ## Installation
 
