@@ -44,7 +44,7 @@ to the old address.
 
 ```
 title : "A post about foo"
-alias : /old-foo.html
+alias : old-foo.html
 ```
 
 Now someone can visit your middleman site at `/old-foo.html` and they'll
@@ -55,7 +55,7 @@ directory.
 
 ```
 title : "A post about foo"
-alias : /old-foo/
+alias : old-foo/
 ```
 
 The example above will result in a redirect file being generated at
