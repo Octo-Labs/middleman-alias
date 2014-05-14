@@ -61,6 +61,14 @@ alias : old-foo/
 The example above will result in a redirect file being generated at
 `/old-foo/index.html`, which will be accessible to browsers at `/old-foo/`.
 
+```
+title : "A post about foo"
+alias : ["old-foo/", "older-foo/"]
+```
+
+Passing an array will allow you to redirect multiple old pages (or
+directories) to your new page.
+
 ## Contributing
 
 1. Fork it ( http://github.com/Octo-Labs/middleman-alias/fork )
