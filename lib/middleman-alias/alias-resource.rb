@@ -21,6 +21,7 @@ module Middleman
         %[
           <html>
             <head>
+              <link rel="canonical" href="#{@alias_path}" />
               <meta name="robots" content="noindex,follow" />
               <meta http-equiv="cache-control" content="no-cache" />
               <script>
