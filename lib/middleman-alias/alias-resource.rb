@@ -25,7 +25,7 @@ module Middleman
               <meta http-equiv="cache-control" content="no-cache" />
               <script>
                 // Attempt to keep search and hash
-                window.location.href = "#{@alias_path}"+window.location.search+window.location.hash;
+                window.location.replace("#{@alias_path}"+window.location.search+window.location.hash);
               </script>
               <meta http-equiv=refresh content="0; url=#{@alias_path}" />
             </head>
