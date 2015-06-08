@@ -1,7 +1,7 @@
 module Middleman
   module Sitemap
     class AliasResource < ::Middleman::Sitemap::Resource
-      
+
       attr_accessor :output
 
       def initialize(store, path, alias_path)
@@ -22,9 +22,13 @@ module Middleman
           <html>
             <head>
               <link rel="canonical" href="#{@alias_path}" />
-              <meta http-equiv=refresh content="0; url=#{@alias_path}" />
               <meta name="robots" content="noindex,follow" />
               <meta http-equiv="cache-control" content="no-cache" />
+              <script>
+                // Attempt to keep search and hash
+                window.location.replace("#{@alias_path}"+window.location.search+window.location.hash);
+              </script>
+              <meta http-equiv=refresh content="0; url=#{@alias_path}" />
             </head>
             <body>
               <a href="#{@alias_path}">You are being redirected.</a>
