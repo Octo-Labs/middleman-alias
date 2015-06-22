@@ -4,8 +4,8 @@ module Middleman
 
       attr_accessor :output
 
-      def initialize(store, path, alias_path)
-        @alias_path = alias_path
+      def initialize(store, path, alias_resource)
+        @alias_resource = alias_resource
         super(store, path)
       end
 
@@ -18,20 +18,21 @@ module Middleman
       end
 
       def render(*args, &block)
+        app.current_path = destination_path
         %[
           <html>
             <head>
-              <link rel="canonical" href="#{@alias_path}" />
+              <link rel="canonical" href="#{app.url_for(@alias_resource)}" />
               <meta name="robots" content="noindex,follow" />
               <meta http-equiv="cache-control" content="no-cache" />
               <script>
                 // Attempt to keep search and hash
-                window.location.replace("#{@alias_path}"+window.location.search+window.location.hash);
+                window.location.replace("#{app.url_for(@alias_resource)}"+window.location.search+window.location.hash);
               </script>
-              <meta http-equiv=refresh content="0; url=#{@alias_path}" />
+              <meta http-equiv=refresh content="0; url=#{app.url_for(@alias_resource)}" />
             </head>
             <body>
-              <a href="#{@alias_path}">You are being redirected.</a>
+              <a href="#{app.url_for(@alias_resource)}">You are being redirected.</a>
             </body>
           </html>
         ]
