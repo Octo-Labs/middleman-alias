@@ -43,7 +43,7 @@ module Middleman
       end
 
       def raw_data
-        {}
+        @alias_resource.raw_data
       end
 
       def ignored?
@@ -51,7 +51,7 @@ module Middleman
       end
 
       def metadata
-        @local_metadata.dup
+        @alias_resource.metadata
       end
 
 
