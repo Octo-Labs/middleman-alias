@@ -10,7 +10,7 @@ module Middleman
       end
 
       def source_file
-        nil
+        @alias_resource.source_file
       end
 
       def template?
