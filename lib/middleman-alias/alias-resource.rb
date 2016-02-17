@@ -18,21 +18,21 @@ module Middleman
       end
 
       def render(*args, &block)
-        app.current_path = destination_path
+        new_url = ::Middleman::Util.url_for(@app, @alias_resource)
         %[
           <html>
             <head>
-              <link rel="canonical" href="#{app.url_for(@alias_resource)}" />
+              <link rel="canonical" href="#{new_url}" />
               <meta name="robots" content="noindex,follow" />
               <meta http-equiv="cache-control" content="no-cache" />
               <script>
                 // Attempt to keep search and hash
-                window.location.replace("#{app.url_for(@alias_resource)}"+window.location.search+window.location.hash);
+                window.location.replace("#{new_url}"+window.location.search+window.location.hash);
               </script>
-              <meta http-equiv=refresh content="0; url=#{app.url_for(@alias_resource)}" />
+              <meta http-equiv=refresh content="0; url=#{new_url}" />
             </head>
             <body>
-              <a href="#{app.url_for(@alias_resource)}">You are being redirected.</a>
+              <a href="#{new_url}">You are being redirected.</a>
             </body>
           </html>
         ]
@@ -58,4 +58,3 @@ module Middleman
     end
   end
 end
-
