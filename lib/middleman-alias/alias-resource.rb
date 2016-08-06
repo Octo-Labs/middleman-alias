@@ -18,7 +18,7 @@ module Middleman
       end
 
       def render(*args, &block)
-        new_url = ::Middleman::Util.url_for(@app, @alias_resource)
+        new_url = ::Middleman::Util.url_for(@app, @alias_resource, {current_resource: self})
         %[
           <html>
             <head>
