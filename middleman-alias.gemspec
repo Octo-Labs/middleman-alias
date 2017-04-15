@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "cucumber", "~> 2.1.0"
   spec.add_development_dependency "aruba",    "~> 0.7.4"
+  spec.add_development_dependency "capybara", "~> 2.5.0"
 end
